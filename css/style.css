@@ -1,0 +1,760 @@
+
+
+body{ 				/*главный блок*/
+	margin: 0; 		/*сразу сбрасываем внешние отступы body*/
+
+	font-family: 'Raleway', sans-serif;		/*семейство шрифтов */
+	font-size: 14px; 			/*размер шрифтов*/
+	color: #6c7279; 		/*цвет шрифта*/
+	background-color: #fff;
+
+
+}
+
+*,
+*:before, /*создает псевдоэлемент до содержимого, для стиля (полосочка, кружочек и тд)*/
+*:after {/*создает псевдоэлемент после содержимого, для стиля (полосочка, кружочек и тд)*/
+	box-sizing: border-box; /*алгоритм для изменения ширины и высоты элемента*/
+}
+
+h1,h2,h3,h4,h5,h6{ /*заголовки*/
+	margin: 0; /*убираем все отступы в заголовках*/
+}
+
+p{
+	margin: 0 0 10px 0; /*отступы в параграфе*/
+}
+
+
+/*container=========*/
+.container{
+	width: 98%;   /*ширина блока 100% экрана*/
+	max-width: 1170px;   /*но максимальная ширина блока 1170px*/	
+	margin: 0 auto; /*выравниваем по центру блока (сверху-снизу по 0, слева-справа auto) */
+}
+
+
+
+
+/*header ===============*/
+.header{   /*блок header*/
+	width: 100%; /*ширина для шапки*/
+	height: 100px; /*высота шапки-навигации*/
+	position: absolute; /*блок навигации(header) будет над фоном*/
+	top: 0; /*позиция верх*/
+	left: 0;/*позиция слева*/
+	z-index: 0; /*блок поверх всех элементов*/
+	
+
+}
+
+.header__inner{   /*блок header__inner*/
+	display: flex; 
+	justify-content: space-between ; /*что бы разделись элементы между собой (логотип слева, навигация справа)*/
+	border-bottom: 1px solid #515369;  /*граница снизу*/
+	padding: 35px 0; /*внутрений отступ для блока inner*/
+	align-items: center; /*что бы выровнять элементы по центру в горизонтале*/
+	
+}
+
+/*nav ===============*/
+.nav{    /*блок nav*/
+ 	display: flex;
+	font-size: 15px;   /*размер текста в блоке nav*/
+	font-weight: 700; /*жирность текста*/
+	text-transform: uppercase;  /*все буквы большие*/
+	
+	}
+
+.nav__link{  /*блок nav__link*/
+	margin-left: 50px; /*отступ слева в каждой ссылке*/
+	color: #fff; /*цвет текста в блоке nav__link*/
+	text-decoration: none;  /*убирает линию у ссылок снизу (подчеркивание)*/
+	opacity: 1; /*прозрачность элемента*/
+	transition: opacity .2s liner ; /*дедает плавные переходы*/
+
+}
+
+.nav__link:first-child{ /*псевдокласс первого элемента*/
+	margin-left: 0; /*отступ слева*/
+}
+
+.nav__link:hover{ /*псевдокласс-изменение при НАВЕДЕНИИ на элемент*/
+	opacity: 0.5; /*при наводе, прозрачность убирается*/
+	
+}
+
+
+/*intro ===============*/
+.intro{
+	display: flex;
+	flex-direction: column; /*каждый новый элемент intro будет с новой строки*/
+	justify-content: center; /*выравнивает по центру блока inro*/
+	height: 750px; /*высота всего блока intro*/
+	padding-top: 100px; /*верхний отступ*/
+	background: #31344e url("../img/fon.jpg") center no-repeat; /*картинка и цвет фона, по центру, без повторений*/
+	
+
+}
+
+.intro__inner{
+	width: 100%; /*ширина блока*/
+	max-width: 970px; /*максимальная ширина блока*/
+	margin: 0 auto; /*отступы что бы сделать по центру элемент*/
+	text-align: center; /*текст по центру блока*/
+}
+
+.intro__title{
+	margin: 0 0 30px 0; /*внешний отступ элемента*/
+	font-family: 'Open Sans', sans-serif; /*семейство шрифтов*/
+	font-size: 125px; /*размер текста*/
+	color: #fff; /*цвет текста*/
+	font-weight: 700; /*жирность текста*/
+	text-transform: uppercase; /*все буквы большие*/
+	line-height: 1.1; /*межстрочный отступ (1-значение от размера текста)*/
+}
+
+.intro__subtitle{
+	margin-bottom: 60px;
+	font-size: 25px; /*размер текста*/
+	color: #fff;	/*цвет текста*/
+	line-height: 1.5; /*межстрочный отступ (1-значение от размера текста)*/
+	font-weight: 400; /*жирность текста*/
+	font-style: italic;
+}
+
+
+/*button =============== кнопка*/ 
+.btn{
+	display: inline-block; /*что бы можно было задавать отступы*/
+	vertical-align: top; /*выравнивание вертикальной границы по верху*/
+	font-size: 13px;  /*размер текста*/
+	color: #fff; /*цвет текста*/
+	font-weight: 600;  /*жирность текста*/
+	text-transform: uppercase;  /*все буквы большие*/
+	text-decoration: none; /*убирает линию у ссылок снизу (подчеркивание)*/
+	padding: 15px 40px; /*внутренние отступы*/
+	border-radius: 2px; /*скругление углов*/
+	transition: background .2s linear; /*плавность при навижении*/
+	text-align: center;
+}
+
+.btn--red{
+	background-color: #df1f1f;  /*фон цвета текста*/
+	
+
+}
+
+.btn--red:hover{ /*псевдокласс для анимации при наведении*/
+	background-color: #a71a1a; /*цвет при навидении*/
+
+}
+
+.btn--long{
+	min-width: 280px;
+}
+
+.photo{
+	display: flex;
+	justify-content: center;
+	margin: 50px 0 0 0;
+}
+
+.photo__title{
+
+	font-size: 65px;
+	font-family: 'cardo', sans-serif;
+	
+}
+
+
+/*features =============== кнопка*/ 
+
+.features{
+	display: flex; /*что бы удобно расположить элементы в нужных местах*/
+	flex-wrap: wrap; /*разрешает переносить элементы на новую строку*/
+	margin: 100px 0; /*отступы сверху снизу */
+}
+
+.features__item{ 
+	margin: 25px 0;
+	width: 33.33333%; /*ширина блока разделена на 3 части от 100%*/
+	text-align: center; /*выравнивание текста по центру*/
+	padding: 0 40px;
+}
+
+.features__icon{
+	margin-bottom: 25px; /*внешний отступ снизу 20пк*/
+}
+
+.features__title{
+	font-size: 14px; /*размер текста*/
+	color: #2d3033; /*цвет текста*/
+	font-weight: 700; /*жирность*/
+	text-transform: uppercase; /*все буквы большие*/
+	margin-bottom: 20px; /*внешний отступ снизу*/
+	
+}
+.features__text{
+	font-size: 14px;/*размер текста*/
+	color: #6c7279;/*цвет текста*/
+	font-weight: 700;/*жирность*/
+	margin-bottom: 15px;/*внешний отступ снизу*/
+	line-height: 1.5;/*межстрочное расстояние*/
+
+}
+
+/* works ========== */
+
+.works{
+	display: flex; /*что бы удобно расположить элементы в нужных местах*/
+	flex-wrap: wrap; /*разрешает переносить элементы на новую строку*/
+	margin: 50px 0 0 0;
+}
+
+.works__item{
+	border-bottom: 1px solid #fff; /*граница сзину */
+	border-right: 1px solid #fff; /*граница справа*/
+	width: 25%; /*ширина 25% от всего окна*/
+	height: 350px; /*высота*/
+	position: relative; /*что бы картинка была поверх  и слоем*/ 
+	overflow: hidden;/*скрыть все что вылазет за пределы блока*/
+
+}
+
+
+.works__photo{
+	min-width:100% ;/*картинка расстягивается*/
+	position: absolute; /*что бы картинка была поверх и слоем*/ 
+	top: 0; /*прижимаем картинку вверх*/
+	left: 0; /*прижимаем картинку влево*/
+	z-index: 1; /*обозначает какой слой над каким будет*/
+	transform: translate3d(-50%, -50% 0);
+}
+
+.works__content{
+	display: flex;
+	flex-direction: column; /*каждый новый элемент начминается с новой строки*/
+	position: absolute;	/*что бы картинка была поверх и слоем*/ 
+	top: 0; /*прижимаем картинку вверх*/
+	left: 0;/*прижимаем картинку влево*/
+	z-index: 2;/*обозначает какой слой над каким будет*/
+	width: 100%; /*ширина */
+	height: 100%; /*высота*/
+	background-color: rgba(232, 69, 69, 0.9); /*цвет фона*/
+	justify-content: center; /*выравниваем по вертикали ,по центру контент*/
+	text-align: center; /*выравниваем по горизонтали по центру контент*/
+	opacity: 0; /*прозрачность 0*/
+	transition: opacity .2s linear; /*плавность показа элемента*/
+}
+
+
+
+.works__title{
+	margin-bottom: 5px; /*внешний отступ вниз */
+	font-size: 14px;	
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.works__text{
+	font-size: 14px;	
+	color: #fff;
+
+}
+
+
+/*team===========*/
+.we{
+	display: flex;
+	justify-content: center;
+	margin: 50px 0 0 0;
+}
+
+.we__title{
+
+	font-size: 65px;
+	font-family: 'cardo', sans-serif;
+	
+}
+
+
+.team{
+	margin: 0 -15px;
+	display: flex; /*что бы удобно расположить элементы в нужных местах*/
+	flex-wrap: wrap; /*разрешает переносить элементы на новую строку*/
+	margin: 50px 0 70px; /*отступы сверху снизу */
+}
+
+.team__item{
+	width: 25%; /*ширина блока 25% от всего блока "контейнер" */
+	padding: 0 15px; /*внутренние отступы*/
+	margin-bottom: 30px; /*нижняя граница*/
+}
+
+.team__photo{
+	display: block;
+	max-width: 100%; /*максимальна я ширина блока по соотношению экрана*/
+	height: auto;
+
+}
+
+.team__name{
+	margin: 20px 0 10px 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	font-size: 22px;
+	color: #2d3033;
+	
+}
+
+.team__job{
+	font-size: 13px;
+	color: #e84545;
+	text-transform: uppercase;
+	
+}
+
+.team__text{
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px; /*межстрочное расстояние*/
+	margin: 20px 0;
+	 /*максимальная ширина блока */
+	color: #6c7279;
+	margin-bottom: 25px;
+}
+
+/*social===========*/
+.social{
+	display: flex;
+	justify-content: left;
+
+}
+
+.social__item{
+	display: flex;
+	justify-content: center; /*выравнивание по центру по горизонтали*/
+	align-items: center; /*выравнивание по центру по вертикали*/
+	width: 40px;
+	height: 40px;
+	border: 1px #e8ecee solid; /*граница */
+	opacity: 0.5;
+	margin-right: 4px;
+	transition: background .2s linear;
+}
+
+.social__item:hover{
+	border-bottom: 2px solid #1a5ca7; /*граница внизу при навидении */
+	border-right: 2px solid #1a5ca7;/*граница справа при навидении */
+}
+
+.social__item:active{
+	border-top: 2px solid #a79e1a;/*граница вверху при нажатии */
+	border-left: 2px solid #a79e1a;/*граница слева при нажатии */
+	border-bottom: none;/*граница внизу при ннажатии */
+	border-right: none;/*граница справа при нажатии */
+}
+
+
+/*reviews===========*/
+.comments{
+	display: flex;
+	justify-content: center;
+	margin: 50px 0 0 0;
+}
+
+.comments__title{
+
+	font-size: 65px;
+	font-family: 'cardo', sans-serif;
+	
+}
+
+
+
+.reviews{
+	overflow: hidden; /*что бы большие картинки не вылезали за грацицы блока*/
+	background-color: #3d5335;
+	margin: 50px 0;
+}
+
+.reviews__item{
+	
+	display: flex;
+	flex-wrap: wrap;/*разрешает переносить элементы на новую строку*/
+
+}
+.reviews__photo{
+	
+	width: 50%; /*ширина 50% блока*/
+	height: 500px; /*ширина контента 500пк*/
+	position: relative; /*позиционирование блока фото*/
+}
+
+.reviews__img{
+	
+	position: absolute; /*позиционирование самой фотографии*/
+	top: 50%; /*прижимаем к верху блока*/
+	right: 0; /*прижимаем справа к блоку*/
+	z-index: 1; /*/*обозначает какой слой над каким будет*/
+	transform: translateY(-50%);
+	
+}
+
+.reviews__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 50%; /*ширина 50% блока*/
+		padding-left: 80px;
+		
+}
+
+.reviews__text{
+	margin-bottom: 25px;
+	font-family: 'cardo', sans-serif;
+	font-size: 36px;
+	font-style: italic; /*курсивный стиль текста*/
+	line-height: 1.2; /*межстрочное расстояние*/
+	color: #fff;
+}
+
+.reviews__author{
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+/*download==================*/
+
+.download{
+	margin: 90px 0;
+	text-align: center;
+}
+
+.download__title{
+	font-size: 28px;
+	font-weight: 300;	
+	color: #2d3033;
+	margin-bottom: 10px;
+
+}
+
+.download__text{
+	font-size: 13px;
+	color: #2d3033;
+	text-transform: uppercase;
+	font-weight: 700;	
+	margin-bottom: 30px;
+
+}
+
+/*footer==================*/
+.footer{
+	
+	background-color: #3a3e64;
+}
+
+.footer__inner{
+	padding: 70px 0;
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.footer__block{
+	width: 33.33333%;
+	text-align: center;
+	padding: 0 15px;
+}
+
+.footer__title{
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 700;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+.footer__text{
+	font-size: 14px;
+	font-weight: 600;	
+	line-height: 1.5;
+	color: #9d9fb2af;
+	font-style: normal;
+}
+
+/*social-footer============*/
+
+.social__ft{
+	display: flex;
+	justify-content: center;
+	
+}
+
+.social__itemft{
+	display: flex;
+	justify-content: center; /*выравнивание по центру по горизонтали*/
+	align-items: center; /*выравнивание по центру по вертикали*/
+	width: 40px;
+	height: 40px;
+	border: 2px #e8ecee solid; /*граница */
+	opacity: 0.8;
+	margin-right: 4px;
+	border-radius: 2px;
+	
+	transition: background .2s linear;
+}
+
+.social__itemft:hover{
+	background-color: #4e69ff;
+}
+
+.social__itemft:active{
+	border-top: 2px solid #a79e1a;/*граница вверху при нажатии */
+	border-left: 2px solid #a79e1a;/*граница слева при нажатии */
+	border-bottom: none;/*граница внизу при ннажатии */
+	border-right: none;/*граница справа при нажатии */
+}
+
+
+/*copyright============*/
+.copyright{
+	padding: 20px 0;
+	background-color: #313454;
+
+}
+
+.copyright__text{
+	text-align: center; /*выравнивание по центру*/
+	font-size: 14xp;
+	color: #808080;
+	line-height: 1.5;
+}
+
+.copyright__text span{
+	color: #fff;
+}
+
+.social__iii{
+	width: 12px;
+	height: 12px;
+}
+
+
+/*burger=======*/
+.burger{
+	display: none; /*по умолчанию не показывать*/
+	background: none;
+	border: none;
+	padding: 9px 2px;
+}
+
+.burger__item{
+	display: block;
+	width: 30px;
+	height: 3px;
+	background-color: #fff;
+	color: transparent; /*цвет прозрачный*/
+	font-size: 0;
+	position: relative;
+	cursor: pointer;
+}
+
+.burger__item:before,
+.burger__item:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0; /*прижимаем полоски к левому краю*/
+	z-index: 1;
+	background-color: #fff;
+
+
+}
+.burger__item:before{ /*полоска перед центральной полоской*/
+	top: -8px;
+}
+.burger__item:after{ /*полоска после центральной полоски*/
+	bottom: -8px;
+
+}
+
+
+
+
+
+
+/*media=================*/
+
+@media (max-width: 991px) { /*медиа адаптация при 991пк*/
+
+	.nav{
+		display: none; /*скрывать навигацию меню при 911пк */
+		position: absolute;
+		right: 0;
+		top: 100%;
+		flex-direction: column;
+		width: 1300px;
+		text-align: right;
+		
+	
+	}
+
+	.nav.show{
+		display: flex;
+
+	}
+
+	.nav__link{
+		padding: 9px 15px;
+		background-color: #31344e;
+
+
+	}
+
+	.burger{
+		display: block; /*при 991пк бургер будет показан*/
+	}
+
+	.intro__title{
+		font-size: 95px; /*текст уменьшается при 991 пк*/
+	}
+
+	.features__item{
+		width: 50%; /*блок уменьшается на 50 %*/
+	}
+
+	.works__item{
+		width: 50%;/*блок уменьшается на 50 %*/
+	}
+
+	.team__item{
+		width: 50%;/*блок уменьшается на 50 %*/
+		text-align: center; /*текст по центру*/
+	
+	}
+
+	.team__photo{
+		margin-left: auto; /*фото по левому краю*/
+		margin-right: auto;/*фото по правому краю*/
+	}
+
+	.social{
+		justify-content: center; /*блок по центру*/
+	}
+	.reviews__photo{
+		margin: 10px 0 40px;
+		width: 100%;
+		overflow: hidden; 
+	}
+	.reviews__content{
+		width: 100%;
+		padding-left: 0;
+		padding-bottom: 40px;
+	}
+	
+}
+@media (max-width: 767px){
+	.intro{
+		height: 600px;
+		padding-top: 130px; /*внутренний отступ сверху*/
+		padding-bottom: 30px; /*внутренний отступ снизу*/
+	}
+	.intro__title{
+		font-size: 50px;
+	}
+	.intro__subtitle{
+		font-size: 16px;
+		margin-bottom: 30px; /*внешний отступ снизу*/
+	}
+
+	.photo__title{
+		font-size: 35px;
+	}
+	.features{
+		margin: 40px 0;
+	}
+	.features__item{
+		width: 50%; /*блок становится на весь экран*/
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.works__item{
+		width: 100%;/*блок становится на весь экран*/
+		height: 300px;/*высота блока 300пк*/
+	}
+
+	.we__title{
+		font-size: 35px;
+	}
+	.team{
+		margin: 50px 0 20px;
+	}
+
+	.team__item{
+		width: 100%;
+	}
+
+	.comments__title{
+		font-size: 35px;
+		
+	}
+	.reviews__photo{
+		margin: 8px 0 40px;
+		width: 100%;
+		overflow: hidden;
+	}
+	
+	.reviews__text{
+		font-size: 25px;
+	}
+
+	.btn--long{
+		min-width: 250px; /*минимальная ширина */
+	}
+
+	.download{
+		margin: 50px 0;
+	}
+
+	.download__title{
+		font-size: 24px;
+	}
+
+	.footer__block{
+		width: 100%;
+	}
+
+	.footer__inner{
+		padding: 25px 0;
+		
+	}
+
+	.footer__block{
+		margin-bottom: 36px;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+
+	.footer__block:last-child{
+		margin-bottom: 0;
+	}
+}
+
+
+
+@media (max-width: 414px){
+
+	.reviews__img{
+		right: -235px;
+	}
+
+}
+
